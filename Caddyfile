@@ -1,0 +1,11 @@
+# Caddy gets and renews the HTTPS certificate by itself. Phones only allow camera and GPS on HTTPS.
+{$DOMAIN} {
+	encode gzip
+	request_body {
+		max_size 10MB
+	}
+	reverse_proxy app:3000 {
+		# keep the live-update stream (server-sent events) flowing instead of buffering it
+		flush_interval -1
+	}
+}

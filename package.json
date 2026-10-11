@@ -1,0 +1,22 @@
+{
+  "name": "treasure-hunt",
+  "version": "1.0.0",
+  "description": "Live treasure-hunt platform: organizer dashboard, team play, AI hints and photo verification, QR checkpoints.",
+  "main": "server/index.js",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test --test-concurrency=1 --test-timeout=120000 tests/*.test.js",
+    "test:e2e": "node tests/e2e/run.js"
+  },
+  "dependencies": {
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.56.0"
+  }
+}

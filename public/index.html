@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Treasure Hunt</title>
+  <meta name="description" content="Run a live, map-based treasure hunt: riddles, photo and QR checkpoints, AI hints.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' shape-rendering='crispEdges'%3E%3Crect width='12' height='8' fill='%233b2412'/%3E%3Crect x='1' y='1' width='10' height='2' fill='%23d99a4c'/%3E%3Crect x='1' y='4' width='10' height='3' fill='%23a8672b'/%3E%3Crect x='5' y='3' width='2' height='3' fill='%23ffcc33'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <main class="landing">
+    <div class="scene" aria-hidden="true"></div>
+    <section class="brand" aria-label="About">
+      <div class="logo" id="logo"></div>
+      <h1 class="title">TREASURE<span>HUNT</span></h1>
+      <p>Solve the riddle. Walk to the spot. Snap a photo or scan the code. First team to the chest wins the game.</p>
+      <div class="px blink" style="color:#fff;font-size:24px">▶ LET THE HUNT BEGIN</div>
+    </section>
+    <section class="panel">
+      <form class="card stack" id="form" novalidate>
+        <h2 id="title">Sign in</h2>
+        <div class="seg hidden" id="roleSeg" role="group" aria-label="I am">
+          <button type="button" data-role="participant" aria-pressed="true"><span class="ico" data-sprite="hero"></span>I'm playing</button>
+          <button type="button" data-role="organizer" aria-pressed="false"><span class="ico" data-sprite="scroll"></span>I'm organizing</button>
+        </div>
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+        </div>
+        <div class="field hidden" id="dnField">
+          <label for="display">Name shown to your team</label>
+          <input id="display" name="display" maxlength="30" autocomplete="nickname">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <div class="hint hidden" id="pwHint">At least 8 characters.</div>
+        </div>
+        <div class="field hidden" id="codeField">
+          <label for="signup">Organizer invite code</label>
+          <input id="signup" name="signup" autocomplete="off">
+        </div>
+        <div class="notice bad hidden" id="err" role="alert"></div>
+        <button class="primary block" id="submit" type="submit">Sign in</button>
+        <p class="muted switchline"><span id="switchText">New here?</span> <a href="#" id="switch">Create an account</a></p>
+      </form>
+    </section>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/sprites.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>
